@@ -95,8 +95,8 @@ class AnonymousApexTask(BaseSalesforceApiTask):
 
     def _prepare_apex(self, apex):
         # Process namespace tokens
-        managed = self.options.get("managed") or False
-        namespaced = self.options.get("namespaced") or False
+        managed = self.options.get("managed") == "True"
+        namespaced = self.options.get("namespaced") == "True"
         namespace = self.project_config.project__package__namespace
         namespace_prefix = ""
         record_type_prefix = ""
